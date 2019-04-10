@@ -45,8 +45,10 @@ public class CustomerController {
 
 
 
-		@DeleteMapping (value = "/customer/{customerId}")
+	@DeleteMapping (value = "/customer/{customerId}")
 	public void deleteCustomer (@PathVariable Long customerId ){
+		Preconditions.checkArgument(customerId!=null && customerId>0);
+
 		customerManager.deleteCustomer(customerId);
 	}
 

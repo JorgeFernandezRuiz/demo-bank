@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "account")
 @Entity
@@ -18,6 +15,7 @@ import javax.persistence.Table;
 @Data
 public class Account {
 	@Id
+	@GeneratedValue
 	private Long accountId;
 	@Column (nullable = false, name = "customer_id")
 	private Long customerId;
